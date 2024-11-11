@@ -3,7 +3,7 @@
 //gayathri
 #include <string.h>
 
-#define MAX_BUCKETS 10
+#define MAX_BUCKETS 20
 
 // Define structures for the linked list and hash table
 typedef struct Item {
@@ -225,8 +225,10 @@ int main() {
     Category *fashion = createCategory("Fashion");
     SubCategory *mens = createSubCategory("Men's Wear");
     SubCategory *womens = createSubCategory("Women's Wear");
+    SubCategory *kids = createSubCategory("Kid's Wear");
     addItemToSubCategory(mens, createItem("Levi's Jeans", 45.0));
     addItemToSubCategory(mens, createItem("Nike T-Shirt", 25.0));
+    addItemToSubCategory(mens, createItem("", 25.0));
     addItemToSubCategory(womens, createItem("Floral Dress", 35.0));
     addItemToSubCategory(womens, createItem("Puma Sneakers", 55.0));
     addSubCategoryToCategory(fashion, mens);
