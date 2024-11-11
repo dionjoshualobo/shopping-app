@@ -221,10 +221,7 @@ void mainMenu(Category *head) {
 int main() {
     // Initialize categories, subcategories, and items
     Category *head = NULL;
-    // Hello
-    Category *hello = createCategory("Hello");
-    SubCategory *hiii = createSubCategory("hiiii");
-    addItemToSubCategory(hiii, createItem("Levi's Jeans", 10.0));
+    
     // Fashion category
     Category *fashion = createCategory("Fashion");
     SubCategory *mens = createSubCategory("Men's Wear");
