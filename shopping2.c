@@ -1,7 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 //gayathri
-#include <string.h>
+//dgfdhf
+#include<string.h>
 
 #define MAX_BUCKETS 20
 
