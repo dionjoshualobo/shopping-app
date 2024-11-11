@@ -66,12 +66,12 @@ void showCart() {
     for (int i = 0; i < MAX_BUCKETS; i++) {
         CartItem *item = cart[i];
         while (item) {
-            printf("%s - $%.2f x %d\n", item->name, item->price, item->quantity);
+            printf("%s - ₹%.2f x %d\n", item->name, item->price, item->quantity);
             total += item->price * item->quantity;
             item = item->next;
         }
     }
-    printf("Total Cost: $%.2f\n", total);
+    printf("Total Cost: ₹%.2f\n", total);
 }
 
 // Functions for creating categories, subcategories, and items
@@ -121,7 +121,7 @@ void displayItems(SubCategory *subCategory) {
     int itemNumber = 1;
 
     while (item) {
-        printf("%d. %s - $%.2f\n", itemNumber++, item->name, item->price);
+        printf("%d. %s - ₹%.2f\n", itemNumber++, item->name, item->price);
         item = item->next;
     }
 
