@@ -258,12 +258,19 @@ int main() {
     Category *groceries = createCategory("Groceries");
     SubCategory *fruits = createSubCategory("Fruits");
     SubCategory *vegetables = createSubCategory("Vegetables");
-    addItemToSubCategory(fruits, createItem("Apples (per lb)", 2.5));
-    addItemToSubCategory(fruits, createItem("Bananas (per lb)", 1.2));
-    addItemToSubCategory(vegetables, createItem("Tomatoes (per lb)", 1.8));
-    addItemToSubCategory(vegetables, createItem("Carrots (per lb)", 1.5));
+    SubCategory *dairy = createSubCategory("Dairy Products");
+    addItemToSubCategory(fruits, createItem("Apples (per kg)", 230));
+    addItemToSubCategory(fruits, createItem("Bananas (per kg)", 100));
+    addItemToSubCategory(fruits, createItem("Ruby Roman Grapes (per kg)", 5907));
+    addItemToSubCategory(vegetables, createItem("Tomatoes (per kg)", 40));
+    addItemToSubCategory(vegetables, createItem("Carrots (per kg)", 70));
+    addItemToSubCategory(vegetables, createItem("Matsutake Mushroom (per kg)", 100000));
+    addItemToSubCategory(dairy, createItem("Milk", 54));
+    addItemToSubCategory(dairy, createItem("Paneer", 70));
+    addItemToSubCategory(dairy, createItem("Matsutake Mushroom (per kg)", 60000));
     addSubCategoryToCategory(groceries, fruits);
     addSubCategoryToCategory(groceries, vegetables);
+    addSubCategoryToCategory(groceries, dairy);
     addCategory(&head, groceries);
 
     // Main menu
