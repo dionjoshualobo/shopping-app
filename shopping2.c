@@ -266,8 +266,8 @@ int main() {
     addItemToSubCategory(vegetables, createItem("Carrots (per kg)", 70));
     addItemToSubCategory(vegetables, createItem("Matsutake Mushroom (per kg)", 100000));
     addItemToSubCategory(dairy, createItem("Milk", 54));
-    addItemToSubCategory(dairy, createItem("Paneer", 70));
-    addItemToSubCategory(dairy, createItem("Matsutake Mushroom (per kg)", 60000));
+    addItemToSubCategory(dairy, createItem("Paneer", 100));
+    addItemToSubCategory(dairy, createItem("Ice Cream", 300));
     addSubCategoryToCategory(groceries, fruits);
     addSubCategoryToCategory(groceries, vegetables);
     addSubCategoryToCategory(groceries, dairy);
