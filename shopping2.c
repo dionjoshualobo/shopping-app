@@ -224,7 +224,6 @@ int main() {
     Category *fashion = createCategory("Fashion");
     SubCategory *mens = createSubCategory("Men's Wear");
     SubCategory *womens = createSubCategory("Women's Wear");
-    SubCategory *kids = createSubCategory("Kid's Wear");
     addItemToSubCategory(mens, createItem("Levi's Jeans", 45.0));
     addItemToSubCategory(mens, createItem("Nike T-Shirt", 25.0));
     addItemToSubCategory(mens, createItem("Puma Sneakers", 25.0));
