@@ -241,12 +241,17 @@ int main() {
     Category *electronics = createCategory("Electronics");
     SubCategory *mobiles = createSubCategory("Mobiles");
     SubCategory *laptops = createSubCategory("Laptops");
-    addItemToSubCategory(mobiles, createItem("iPhone 13", 999.0));
-    addItemToSubCategory(mobiles, createItem("Samsung Galaxy S21", 799.0));
-    addItemToSubCategory(laptops, createItem("MacBook Pro", 1299.0));
-    addItemToSubCategory(laptops, createItem("Dell XPS 13", 999.0));
+    SubCategory *audio = createSubCategory("Audio");
+    addItemToSubCategory(mobiles, createItem("iPhone 16 Pro Max", 184900.0));
+    addItemToSubCategory(mobiles, createItem("Samsung Galaxy S24", 129999.0));
+    addItemToSubCategory(mobiles, createItem("Nothing Phone(2)", 27999.0));
+    addItemToSubCategory(laptops, createItem("MacBook Pro M3", 140990.0));
+    addItemToSubCategory(laptops, createItem("Asus ROG Zephyrus", 299990.0));
+    addItemToSubCategory(audio, createItem("Sony WH-1000XM5", 29751.0));
+    addItemToSubCategory(audio, createItem("MoonDrop Beautiful World IEM", 77999.0));
     addSubCategoryToCategory(electronics, mobiles);
     addSubCategoryToCategory(electronics, laptops);
+    addSubCategoryToCategory(electronics, audio);
     addCategory(&head, electronics);
 
     // Groceries category
