@@ -1,8 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-//gayathri
-//dgfdhf
-//yashu
 #include<string.h>
 
 #define MAX_BUCKETS 20
