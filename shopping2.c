@@ -1,10 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
 #define MAX_BUCKETS 20
 
-// Define structures for the linked list and hash table
 typedef struct Item {
     char name[50];
     double price;
@@ -30,10 +28,8 @@ typedef struct CartItem {
     struct CartItem *next;
 } CartItem;
 
-// Hash table for the cart
 CartItem *cart[MAX_BUCKETS];
 
-// Hash function
 int hash(char *name) {
     int hash = 0;
     for (int i = 0; name[i] != '\0'; i++)
@@ -41,7 +37,6 @@ int hash(char *name) {
     return hash;
 }
 
-// Functions for cart operations
 void addItemToCart(char *name, double price, int quantity) {
     int bucket = hash(name);
     CartItem *item = cart[bucket];
@@ -74,7 +69,6 @@ void showCart() {
     printf("Total Cost: ₹%.2f\n", total);
 }
 
-// Functions for creating categories, subcategories, and items
 Category *createCategory(char *name) {
     Category *category = (Category *)malloc(sizeof(Category));
     strcpy(category->name, name);
@@ -114,7 +108,6 @@ void addCategory(Category **head, Category *category) {
     *head = category;
 }
 
-// Functions for displaying subcategories and items
 void displayItems(SubCategory *subCategory) {
     int choice, quantity;
     Item *item = subCategory->items;
@@ -180,7 +173,6 @@ void displaySubCategories(Category *category) {
     }
 }
 
-// Main menu function
 void mainMenu(Category *head) {
     int choice;
     Category *category;
@@ -217,10 +209,7 @@ void mainMenu(Category *head) {
 }
 
 int main() {
-    // Initialize categories, subcategories, and items
     Category *head = NULL;
-    
-    // Fashion category
     Category *fashion = createCategory("Fashion");
     SubCategory *mens = createSubCategory("Men's Wear");
     SubCategory *womens = createSubCategory("Women's Wear");
@@ -237,7 +226,6 @@ int main() {
     addSubCategoryToCategory(fashion, womens);
     addCategory(&head, fashion);
 
-    // Electronics category
     Category *electronics = createCategory("Electronics");
     SubCategory *mobiles = createSubCategory("Mobiles");
     SubCategory *laptops = createSubCategory("Laptops");
@@ -254,7 +242,6 @@ int main() {
     addSubCategoryToCategory(electronics, audio);
     addCategory(&head, electronics);
 
-    // Groceries category
     Category *groceries = createCategory("Groceries");
     SubCategory *fruits = createSubCategory("Fruits");
     SubCategory *vegetables = createSubCategory("Vegetables");
@@ -263,18 +250,15 @@ int main() {
     addItemToSubCategory(fruits, createItem("Bananas (per kg)", 100));
     addItemToSubCategory(fruits, createItem("Ruby Roman Grapes (per kg)", 5907));
     addItemToSubCategory(vegetables, createItem("Tomatoes (per kg)", 40));
-    addItemToSubCategory(vegetables, createItem("Carrots (per kg)", 70));
-    addItemToSubCategory(vegetables, createItem("Matsutake Mushroom (per kg)", 100000));
-    addItemToSubCategory(dairy, createItem("Milk", 54));
-    addItemToSubCategory(dairy, createItem("Paneer", 100));
-    addItemToSubCategory(dairy, createItem("Ice Cream", 300));
+    addItemToSubCategory(vegetables, createItem("Onions (per kg)", 60));
+    addItemToSubCategory(vegetables, createItem("Potatoes (per kg)", 30));
+    addItemToSubCategory(dairy, createItem("Mother Dairy Full Cream (1L)", 70));
+    addItemToSubCategory(dairy, createItem("Amul Butter (500g)", 260));
     addSubCategoryToCategory(groceries, fruits);
     addSubCategoryToCategory(groceries, vegetables);
     addSubCategoryToCategory(groceries, dairy);
     addCategory(&head, groceries);
 
-    // Main menu
     mainMenu(head);
-
     return 0;
 }
