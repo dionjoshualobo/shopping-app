@@ -1,1 +1,5 @@
-shop
+# Ignore all files without an extension (optional and risky if not specific)
+*
+!*/     # Don't ignore directories
+!*.c    # Don't ignore C files
+!*.h    # Don't ignore header files
